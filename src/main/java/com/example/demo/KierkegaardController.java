@@ -28,8 +28,6 @@ public class KierkegaardController {
 
       try{
         File file = new ClassPathResource("static/quotes.json").getFile();
-//        Resource resource = new ClassPathResource("quotes.json");
-//        File file = resource.getFile();
         String json = new String(Files.readAllBytes(file.toPath()));
 
         ObjectMapper mapper = new ObjectMapper();
@@ -44,9 +42,6 @@ public class KierkegaardController {
           }
         }
         
-       // JsonNode jsonNode = array.get(1);
-
-
       } catch (IOException ex) {
         return "Had an IO exception. Oops.";
       }
